@@ -1,69 +1,168 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 function MyWork() {
+  const [activeCategory, setActiveCategory] = useState('feature');
+  const scrollContainerRef = useRef(null);
+
   const categories = [
-    { id: 'data-journalism', name: 'Data Journalism' },
-    { id: 'print-digital', name: 'Print & Digital Media' },
-    { id: 'packaging-industry', name: 'Packaging Industry Insights' },
+    { id: 'feature', name: 'Features' },
+    { id: 'magazine', name: 'Magazines' },
+    { id: 'news', name: 'News' },
+    { id: 'thesis', name: 'Thesis' }
   ];
 
+  // Projects array without hardcoded IDs
   const projects = [
     {
-      id: 1,
-      title: "The Future of Packaging: Sustainability Trends Reshaping the Industry",
-      excerpt: "An in-depth analysis of sustainability trends in the packaging industry, featuring interactive data visualizations and expert interviews.",
-      category: "packaging-industry",
-      imageUrl: "/path-to-packaging-image.jpg"
+      title: "Orbango’s edgy bottle",
+      excerpt: "When Orbango, a Mumbai-based juice bar, decided to sell its product in customised packaging, designer Jigna Shah Oza, ...",
+      category: "feature",
+      imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_nuoqtgnuoqtgnuoq.jpeg',
+      externalUrl: "https://www.printweek.in/features/environmental-myths-busted-41183"
+    },
+
+    {
+      title: "Football’s popularity, cardiac safety awareness opportunity",
+      excerpt: "Medics see football’s heart problem as chance to educate",
+      category: "feature",
+      imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_nuoqtgnuoqtgnuoq.jpeg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Writing Samples OOH.pdf`
     },
     {
-      id: 2,
-      title: "Print's Digital Revolution: How Technology is Transforming Traditional Media",
-      excerpt: "A comprehensive look at the intersection of print and digital technologies, showcasing innovative case studies from leading publications.",
-      category: "print-digital",
-      imageUrl: "/path-to-print-tech-image.jpg"
+      title: "The new OOH regulations and what needs to be done",
+      excerpt: "The Municipal Corporation of Greater Mumbai has proposed a series of changes in the new outdoor advertising regulation that focus on safety, minimizing hazardous materials, and promoting eco-friendly solutions...",
+      category: "feature",
+      imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_gwk7c2gwk7c2gwk7.jpeg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Writing Samples OOH.pdf`
     },
     {
-      id: 3,
-      title: "Data Visualization in Journalism: A Case Study in the Packaging Sector",
-      excerpt: "Explore how data visualization techniques can effectively communicate complex industry data, featuring an interactive dashboard of packaging trends.",
-      category: "data-journalism",
-      imageUrl: "/path-to-data-viz-image.jpg"
+      title: "The plastic conundrum",
+      excerpt: "Lets discuss the challenges and opportunities in achieving a circular economy for plastics in India. It highlights initiatives by companies like HUL and Nestle to increase the use of recycled plastics...",
+      category: "feature",
+      imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_nuoqtgnuoqtgnuoq.jpeg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Features/The plastic conundrum .pdf`
+
+    },
+
+    {
+      title: "FMCG, spending and the pandemic",
+      excerpt: "The report by the World Advertising Research Center (WARC) explores the impact of the COVID-19 pandemic on the FMCG industry, highlighting a probable short-term recession and advertising downturn...", // Truncated
+      category: "feature",
+      imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_6av1gs6av1gs6av1.jpeg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Features/Writing Sample Warc.pdf`
+    },
+
+    {
+      title: "Why we need to be serious about sustainability...",
+      excerpt: "I recently read a post, which stated, “If you haven’t read a book, picked up a new skill, or learnt a musical instrument, then you just lack discipline.",
+      category: "magazine",
+      imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_2feev82feev82fee.jpeg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Magazines/Writing Sample 1.pdf`
     },
     {
-      id: 4,
-      title: "The Impact of AI on Editorial Workflows",
-      excerpt: "An examination of how artificial intelligence is reshaping content creation and editorial processes in modern newsrooms.",
-      category: "print-digital",
-      imageUrl: "/path-to-ai-editorial-image.jpg"
+      title: "Reusing nature’s own packaging",
+      excerpt: "I write this from Chennai. Every day, I have been following the news.How the sunken ship XPressPearl that caught fire and spilled its oil cargo", // Truncated
+      category: "magazine",
+      imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_lkyplolkyplolkyp.jpeg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Magazines/Writing sample 2.pdf`
     },
     {
-      id: 5,
-      title: "Circular Economy in Packaging: Data-Driven Insights",
-      excerpt: "A deep dive into the circular economy concept in the packaging industry, featuring data analysis and predictive models.",
-      category: "packaging-industry",
-      imageUrl: "/path-to-circular-economy-image.jpg"
+      title: "Cosmo Films reports profit of Rs 113 crores for FY20",
+      excerpt: "The company anticipates increased demand for flexible packaging due to changing consumer preferences and hygiene concerns following the COVID-19 pandemic.",
+      category: "news",
+      imageUrl: process.env.PUBLIC_URL + '../images/Firefly A solar panel array generating clean energy. minmalistic line art 85671.jpg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/News/Writing Sample Cosmo films.pdf`
     },
     {
-      id: 6,
-      title: "Visualizing News Consumption Patterns",
-      excerpt: "An interactive project showcasing how data visualization can reveal insights about news consumption habits across different demographics.",
-      category: "data-journalism",
-      imageUrl: "/path-to-news-consumption-image.jpg"
-    }
+      title: "HCCB collects 30,000 kg plastics under new campaign",
+      excerpt: "'Plastic Lao, Thaila Pao' campaign employs a barter system to encourage plastic waste collection and recycling.",
+      category: "news",
+      imageUrl: process.env.PUBLIC_URL + '../images/Firefly A solar panel array generating clean energy. minmalistic line art 85671.jpg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/News/Writing Sample HCCB.pdf`
+    },
+    {
+      title: "PepsiCo India achieves 100% PET recycling in Maharashtra",
+      excerpt: "The 100% PET recycling milestone in Maharashtra involved collaboration with 10,000 waste pickers and support from the state government.",
+      category: "news",
+      imageUrl: process.env.PUBLIC_URL + '../images/Firefly A solar panel array generating clean energy. minmalistic line art 85671.jpg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/News/Writing Samples Pespisco.pdf`
+    },
+    {
+      title: "ITC to acquire Sunrise Foods",
+      excerpt: "Acquisition of Sunrise Foods aligns with ITC's strategy to expand its FMCG business and leverage its distribution network.",
+      category: "news",
+      imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_lvarl3lvarl3lvar.jpeg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/News/Writing Sample ITC.pdf`
+    },
+    {
+      title: "Bizongo raises USD 30 million in Series C funding",
+      excerpt: "Series C funding will be used to enhance Bizongo's technology platform, expand into new sectors, and increase its reach across India.",
+      category: "news",
+      imageUrl: process.env.PUBLIC_URL + '../images/Firefly A solar panel array generating clean energy. minmalistic line art 85671.jpg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/News/Writing sample bizongo.pdf`
+    },
+    {
+      title: "Xerox acquires Digitex Canada",
+      excerpt: "The acquisition of Digitex Canada strengthens Xerox's position in the North American SMB market and expands its geographical reach.",
+      category: "news",
+      imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_db5wkrdb5wkrdb5w.jpeg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/News/writng sample xerox.pdf`
+    },
+    {
+      title: "Shrinath Flexipack to set up Rs 113,75 cr factory in Abu Dhabi",
+      excerpt: "This new factory in Abu Dhabi will enable Shrinath Flexipack to better serve clients in the Middle East, Africa, and Europe.",
+      category: "news",
+      imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_xvufo2xvufo2xvuf.jpeg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/News/Writing Sample Shrinath Flexipack.pdf`
+    },
+    {
+      title: "Serum Institute buys 50% stake in Schott Kaisha",
+      excerpt: "Strategic partnership with Schott Kaisha aims to secure the supply of high-quality pharma packaging to meet the rising global demand.",
+      category: "news",
+      imageUrl: process.env.PUBLIC_URL + '../images/Firefly A solar panel array generating clean energy. minmalistic line art 85671.jpg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/News/writing sample serum.pdf`
+    },
+    {
+      title: "Nestle to create market for food-grade recycled plastics",
+      excerpt: "The substantial investment will be used to promote the use of food-grade recycled plastics and support the development of sustainable packaging solutions.",
+      category: "news",
+      imageUrl: process.env.PUBLIC_URL + '../images/Firefly A solar panel array generating clean energy. minmalistic line art 85671.jpg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/News/wrting sample nestle.pdf`
+    },
+    {
+      title: "Sudden Cardiac Death and Sports",
+      excerpt: "A matter of public health",
+      category: "thesis",
+      imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_nuoqtgnuoqtgnuoq.jpeg',
+      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Thesis/DOC-20230110-WA0003..pdf`
+    },
+
+
   ];
+
+  const filteredProjects = projects.filter(project => project.category === activeCategory);
+
+  const scroll = (direction) => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      const scrollAmount = container.offsetWidth;
+      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="my-work container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold mb-8 text-center">My Work</h1>
-      
       <div className="category-filter mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Categories</h2>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {categories.map(category => (
-            <button 
+            <button
               key={category.id}
-              className="px-4 py-2 bg-gray-200 rounded-full hover:bg-primary hover:text-white transition duration-300"
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-4 py-2 rounded-full transition duration-300 ${activeCategory === category.id
+                ? 'bg-primary text-white'
+                : 'bg-gray-200 hover:bg-primary hover:text-white'
+                }`}
             >
               {category.name}
             </button>
@@ -71,17 +170,59 @@ function MyWork() {
         </div>
       </div>
 
-      <div className="projects-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map(project => (
-          <div key={project.id} className="project-card bg-white rounded-lg shadow-md overflow-hidden">
-            <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover" />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-600 mb-4">{project.excerpt}</p>
-              <Link to={`/article/${project.id}`} className="text-primary hover:underline">Read More</Link>
+      <div>
+        <div
+          ref={scrollContainerRef}
+          className="projects-scroll flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+          style={{ scrollBehavior: 'smooth', paddingBottom: '1rem' }}
+        >
+          {filteredProjects.map(project => (
+            <div
+              key={project.id}
+              className="project-card flex-none w-[calc(33.333%-16px)] mx-2 bg-white rounded-lg shadow-md overflow-hidden snap-start"
+            >
+              <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-gray-600 mb-4">{project.excerpt}</p>
+                {project.externalUrl ? (
+                  <a
+                    href={project.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Read More
+                  </a>
+                ) : project.pdfUrl ? (
+                  <a
+                    href={project.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Read More
+                  </a>
+                ) : null}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <div className="flex justify-center mt-4 space-x-4">
+          <button
+            onClick={() => scroll(-1)}
+            className="bg-white p-2 rounded-full shadow-md"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            onClick={() => scroll(1)}
+            className="bg-white p-2 rounded-full shadow-md"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
       </div>
     </div>
   );

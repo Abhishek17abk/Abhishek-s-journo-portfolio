@@ -1,101 +1,115 @@
-import React, { useState } from 'react';
-import { FaPen, FaChartBar, FaUsers, FaLaptopCode, FaNewspaper, FaIndustry } from 'react-icons/fa';
+import React from 'react';
+import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function AboutContact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', message: '' });
-  };
-
   const skills = [
-    { name: "Transforming Complex Data into Engaging Narratives", icon: <FaChartBar /> },
-    { name: "Crafting Compelling Content Across Multiple Platforms", icon: <FaPen /> },
-    { name: "Leading Editorial Teams to Produce High-Quality Publications", icon: <FaUsers /> },
-    { name: "Leveraging Programming Skills for Interactive Storytelling", icon: <FaLaptopCode /> },
-    { name: "Expert in Print and Digital Media", icon: <FaNewspaper /> },
-    { name: "Specialist in Printing and Packaging Industry", icon: <FaIndustry /> },
+    { name: "Data Visualization", level: "Expert" },
+    { name: "Editorial", level: "Advanced" },
+    { name: "Python", level: "Intermediate" },
+    { name: "Tableau", level: "Advanced" },
+    { name: "Datawrapper", level: "Advanced" },
+  ];
+
+  const education = [
+    {
+      degree: "Master's in Computational and Data Journalism",
+      institution: "Cardiff University",
+      year: "2021 - 2023",
+    },
+    {
+      degree: "Bachelor of Engineering in Printing and Packaging",
+      institution: "SIES Graduate School of Technology",
+      year: "2012 - 2018",
+    },
+  ];
+
+  const experience = [
+    {
+      title: "Consulting Editor",
+      company: "Haymarket SAC Publishing (India) Private Limited",
+      period: "September 2021 - December 2021",
+      description: "Contributed to editorial strategy and content planning.",
+    },
+    {
+      title: "Associate Editor",
+      company: "Haymarket SAC Publishing (India) Private Limited",
+      period: "March 2020 - September 2021",
+      description: "Managed editorial content and assisted with marketing initiatives.",
+    },
+    {
+      title: "Editorial Assistant",
+      company: "Haymarket SAC Publishing (India) Private Limited",
+      period: "July 2018 - February 2020",
+      description: "Supported content creation and management for print and digital platforms.",
+    },
+    {
+      title: "Junior Editor",
+      company: "Modern Plastics India Magazine",
+      period: "January 2018 - June 2018",
+      description: "Contributed to editorial content focusing on the plastics industry.",
+    },
   ];
 
   return (
     <div className="about-contact container mx-auto px-4 py-16">
-      <section className="about mb-16">
-        <h1 className="text-4xl font-bold mb-8 text-center">About Me</h1>
-        <div className="about-content flex flex-col md:flex-row items-center md:items-start">
-          <img src="/path-to-your-professional-image.jpg" alt="Abhishek Muralidharan" className="w-64 h-64 object-cover rounded-lg shadow-md mb-8 md:mb-0 md:mr-8" />
-          <div className="about-text">
-            <p className="mb-6 text-lg">
-              With a keen eye for data and a passion for storytelling, I've spent the last four years navigating the intricate world of B2B trade publications, specializing in the printing and packaging industry. My journey from editorial assistant to associate editor at Haymarket SAC has been marked by a commitment to finding the stories hidden in data and bringing them to life through compelling narratives and visualizations.
-            </p>
-            <p className="mb-6 text-lg">
-              Armed with a Master's degree in Computational and Data Journalism from Cardiff University, I combine programming prowess with editorial finesse to uncover and communicate complex stories effectively.
-            </p>
-            <h2 className="text-2xl font-bold mb-4">Skills & Expertise</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {skills.map((skill, index) => (
-                <li key={index} className="flex items-center">
-                  <span className="text-primary mr-2">{skill.icon}</span>
-                  {skill.name}
-                </li>
-              ))}
-            </ul>
+      <div className="flex flex-col md:flex-row justify-center items-center mb-16">
+        <div className="md:w-1/2 flex justify-center items-center mb-8 md:mb-0">
+          <header className="text-center">
+            <div className="relative w-48 h-48 mx-auto mb-8">
+              <img
+                src={process.env.PUBLIC_URL + '/images/1578748370061.jpeg'}
+                alt="Abhishek Muralidharan"
+                className="rounded-full object-cover w-full h-full"
+              />
+            </div>
+            <h1 className="text-4xl font-bold mb-2">Abhishek Muralidharan</h1>
+            <p className="text-xl text-gray-600">Data Journalist & Editorial Specialist</p>
+          </header>
+        </div>
+
+        <div className="md:w-1/2 flex justify-center items-center">
+          <div className="text-center md:text-right">
+            <a href="../pdfs/resume/Abhishek Muralidharan CV new.pdf" download className="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition duration-300 mb-4 inline-block">
+              Download Full Resume
+            </a>
+            <div className="social-links flex justify-center space-x-6 mt-4">
+              <a href="https://www.linkedin.com/in/abhishek-muralidharan" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark transition-colors duration-200">
+                <FaLinkedin size={24} />
+              </a>
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark transition-colors duration-200">
+                <FaGithub size={24} />
+              </a>
+              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark transition-colors duration-200">
+                <FaTwitter size={24} />
+              </a>
+            </div>
           </div>
         </div>
+      </div>
+
+      <section className="introduction mb-16">
+        <p className="text-lg leading-relaxed">
+          I am a data journalist with a background in editorial work, specializing in the printing and packaging industry.
+          My journey through journalism has been enriched by a Master's degree in Computational and
+          Data Journalism from Cardiff University, which has equipped me with skills to blend
+          data analysis with storytelling.
+        </p>
+
+        <p className="text-lg leading-relaxed mt-4">
+          My experience includes working with editorial teams, contributing to
+          content strategy, and utilizing data visualization tools to enhance narrative impact.
+          I am passionate about transforming complex datasets into accessible,
+          engaging stories that resonate with both industry professionals and general audiences.
+        </p>
+        <p className="text-lg leading-relaxed mt-4">
+          Whether it's exploring sustainability trends in packaging or analyzing the
+          intersection of print and digital media, I aim to bring clarity and insight
+          to each topic I cover. I'm continuously developing my skills in data analysis and
+          visualization, always seeking to improve the quality and impact of my work.
+        </p>
       </section>
 
-      <section className="contact">
-        <h2 className="text-3xl font-bold mb-8 text-center">Let's Collaborate on Data-Driven Stories</h2>
-        <p className="text-center mb-8">Have a complex dataset that needs unraveling? Looking for insights on the printing and packaging industry? Let's connect.</p>
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
-          <div className="mb-6">
-            <label htmlFor="name" className="block mb-2 font-semibold">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-          </div>
-          <div className="mb-6">
-            <label htmlFor="email" className="block mb-2 font-semibold">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-          </div>
-          <div className="mb-6">
-            <label htmlFor="message" className="block mb-2 font-semibold">Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-              rows="5"
-            ></textarea>
-          </div>
-          <button type="submit" className="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition duration-300">Start the Conversation</button>
-        </form>
-      </section>
+      {/* You can add the Timeline and SkillRadarChart components here if needed */}
     </div>
   );
 }
