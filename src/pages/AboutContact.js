@@ -2,53 +2,7 @@ import React from 'react';
 import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function AboutContact() {
-  const skills = [
-    { name: "Data Visualization", level: "Expert" },
-    { name: "Editorial", level: "Advanced" },
-    { name: "Python", level: "Intermediate" },
-    { name: "Tableau", level: "Advanced" },
-    { name: "Datawrapper", level: "Advanced" },
-  ];
 
-  const education = [
-    {
-      degree: "Master's in Computational and Data Journalism",
-      institution: "Cardiff University",
-      year: "2021 - 2023",
-    },
-    {
-      degree: "Bachelor of Engineering in Printing and Packaging",
-      institution: "SIES Graduate School of Technology",
-      year: "2012 - 2018",
-    },
-  ];
-
-  const experience = [
-    {
-      title: "Consulting Editor",
-      company: "Haymarket SAC Publishing (India) Private Limited",
-      period: "September 2021 - December 2021",
-      description: "Contributed to editorial strategy and content planning.",
-    },
-    {
-      title: "Associate Editor",
-      company: "Haymarket SAC Publishing (India) Private Limited",
-      period: "March 2020 - September 2021",
-      description: "Managed editorial content and assisted with marketing initiatives.",
-    },
-    {
-      title: "Editorial Assistant",
-      company: "Haymarket SAC Publishing (India) Private Limited",
-      period: "July 2018 - February 2020",
-      description: "Supported content creation and management for print and digital platforms.",
-    },
-    {
-      title: "Junior Editor",
-      company: "Modern Plastics India Magazine",
-      period: "January 2018 - June 2018",
-      description: "Contributed to editorial content focusing on the plastics industry.",
-    },
-  ];
 
   return (
     <div className="about-contact container mx-auto px-4 py-16">
@@ -76,12 +30,12 @@ function AboutContact() {
               <a href="https://www.linkedin.com/in/abhishek-muralidharan" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark transition-colors duration-200">
                 <FaLinkedin size={24} />
               </a>
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark transition-colors duration-200">
-                <FaGithub size={24} />
+              <a href="https://x.com/abhishekmurli17?lang=en" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" fill="currentColor">
+                  <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                </svg>
               </a>
-              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark transition-colors duration-200">
-                <FaTwitter size={24} />
-              </a>
+
             </div>
           </div>
         </div>

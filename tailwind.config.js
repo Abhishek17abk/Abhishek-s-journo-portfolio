@@ -1,11 +1,11 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false,
   theme: {
     extend: {
       colors: {
-        primary: '#2fbdff',
-        secondary: '#cccccc',
+        primary: '#0047AB',  // Dark blue (Cobalt)
+        secondary: '#72A0C1', // Light blue (Air Superiority Blue)
         background: '#ffffff',
         text: '#000000',
         accent: '#000000'

@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* Add any global styles here */
 body {
-  @apply bg-background text-text;
+  font-family: 'Arial', sans-serif;
+}
+
+/* You might want to add your gradient colors here */
+:root {
+  --color-primary: #3B82F6;
+  /* blue-500 */
+  --color-secondary: #014753;
+  /* cyan-500 */
 }
