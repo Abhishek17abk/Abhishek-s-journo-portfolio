@@ -16,7 +16,7 @@ function Home() {
       title: "Football's popularity, cardiac safety awareness opportunity",
       excerpt: "Medics see football's heart problem as chance to..",
       imageUrl: '../images/Gemini_Generated_Image_yezhluyezhluyezh.jpeg', 
-      pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Features/Football's popularity, cardiac safety awareness opportunity.pdf`
+      link: `../pdfs/Features/Football's popularity, cardiac safety awareness opportunity.pdf`
     },
     {
       id: 3,
