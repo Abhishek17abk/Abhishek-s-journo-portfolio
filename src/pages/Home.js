@@ -14,16 +14,16 @@ function Home() {
     {
       id: 2,
       title: "Football's popularity, cardiac safety awareness opportunity",
-      excerpt: "Medics see football's heart problem as chance to..",
-      imageUrl: '../images/Gemini_Generated_Image_yezhluyezhluyezh.jpeg', 
-      link: `../pdfs/Features/Football's popularity, cardiac safety awareness opportunity.pdf`
+      excerpt: "Medics see football's heart problem as chance to educate",
+      imageUrl: '../images/Gemini_Generated_Image_yezhluyezhluyezh.jpeg',
+      link: `${process.env.PUBLIC_URL}../pdfs/Features/Football’s popularity, cardiac safety awareness opportunity.pdf`
     },
     {
       id: 3,
       title: "Reusing nature's own packaging",
       excerpt: "I write this from Chennai. Every day, I have been following the news. How the sunken ship XPressPearl that caught fire and spilled its oil cargo...",
       imageUrl: '../images/Screenshot 2024-09-13 at 01-40-17 Writing Sample 1.pdf.png',
-      link: `../pdfs/Magazines/Writing sample 2.pdf`
+      link: `${process.env.PUBLIC_URL}../pdfs/Magazines/Writing sample 2.pdf`
     },
   ];
 
