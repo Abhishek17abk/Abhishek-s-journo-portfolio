@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 
 function AboutContact() {
 
