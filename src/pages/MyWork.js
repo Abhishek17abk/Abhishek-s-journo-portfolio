@@ -57,14 +57,14 @@ function MyWork() {
 
     {
       title: "Why we need to be serious about sustainability...",
-      excerpt: "I recently read a post, which stated, “If you haven’t read a book, picked up a new skill, or learnt a musical instrument, then you just lack discipline.",
+      excerpt: "What packaging? magazine June 2021 edition with the latest packaging, printing and converting updates",
       category: "magazine",
       imageUrl: process.env.PUBLIC_URL + '../images/Screenshot 2024-09-13 at 01-40-49 Writing sample 2.pdf.png',
       pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Magazines/Writing sample 2.pdf`
     },
     {
       title: "Reusing nature’s own packaging",
-      excerpt: "I write this from Chennai. Every day, I have been following the news.How the sunken ship XPressPearl that caught fire and spilled its oil cargo", // Truncated
+      excerpt: "What packaging? magazine April 2020 edition with the latest packaging, printing and converting updates", // Truncated
       category: "magazine",
       imageUrl: process.env.PUBLIC_URL + '../images/Screenshot 2024-09-13 at 01-40-17 Writing Sample 1.pdf.png',
       pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Magazines/Writing Sample 1.pdf`
