@@ -134,7 +134,7 @@ function MyWork() {
     },
     {
       title: "Sudden Cardiac Death and Sports",
-      excerpt: "A matter of public health",
+      excerpt: "A matter of public health. dissertation sheds light on the issue of sudden cardiac arrests in sports athletes and its remedies",
       category: "thesis",
       imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_q6i6pmq6i6pmq6i6.jpeg',
       pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Thesis/DOC-20230110-WA0003..pdf`
