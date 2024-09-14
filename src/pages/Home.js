@@ -21,7 +21,7 @@ function Home() {
     {
       id: 3,
       title: "Reusing nature's own packaging",
-      excerpt: "I write this from Chennai. Every day, I have been following the news. How the sunken ship XPressPearl that caught fire and spilled its oil cargo...",
+      excerpt: "What packaging? magazine April 2020 edition with the latest packaging, printing and converting updates",
       imageUrl: '../images/Screenshot 2024-09-13 at 01-40-17 Writing Sample 1.pdf.png',
       link: `${process.env.PUBLIC_URL}../pdfs/Magazines/Writing sample 2.pdf`
     },
