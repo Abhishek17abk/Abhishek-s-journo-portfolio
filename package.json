@@ -2,6 +2,7 @@
   "name": "journo-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://abhishek17abk.github.io/Abhishek-s-journo-portfolio",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
