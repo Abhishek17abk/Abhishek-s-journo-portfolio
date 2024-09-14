@@ -23,14 +23,13 @@ This project is built using modern web technologies, including:
 
 ## Viewing the Portfolio
 
-To view the live version of my portfolio, please visit: [Insert your hosted website URL here]
+To view the live version of my portfolio, please visit: https://abhishekmuralidharan.netlify.app
 
 ## Contact
 
 If you'd like to get in touch or learn more about my work, you can reach me through:
 
-- LinkedIn: [Your LinkedIn profile URL]
-- Twitter: [Your Twitter profile URL]
-- Email: [Your professional email address]
+- LinkedIn: https://www.linkedin.com/in/abhishek-muralidharan
+- Twitter: https://x.com/abhishekmurli17?lang=en
 
 Thank you for visiting my portfolio repository!
