@@ -26,7 +26,7 @@ function MyWork() {
 
     {
       title: "Football’s popularity, cardiac safety awareness opportunity",
-      excerpt: "Medics see football’s heart problem as chance to educate",
+      excerpt: "  Medics see football as chance to educate on heart problems",
       category: "feature",
       imageUrl: process.env.PUBLIC_URL + '../images/Gemini_Generated_Image_yezhluyezhluyezh.jpeg',
       pdfUrl: `${process.env.PUBLIC_URL}../pdfs/Features/Football’s popularity, cardiac safety awareness opportunity.pdf`
